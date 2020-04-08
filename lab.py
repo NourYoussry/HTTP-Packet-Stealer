@@ -39,13 +39,6 @@ def parse_application_layer_packet(ip_packet_payload: bytes) -> TcpPacket:
     # That's a byte literal (~byte array) check resources section
     return TcpPacket(-1, -1, -1, b'')
 
-def Int2IP(ipnum):
-    o1 = int(ipnum / 16777216) % 256
-    o2 = int(ipnum / 65536) % 256
-    o3 = int(ipnum / 256) % 256
-    o4 = int(ipnum) % 256
-    return '%(o1)s.%(o2)s.%(o3)s.%(o4)s' % locals()
-
 def to_string(ip):
   "Convert 32-bit integer to dotted IPv4 address."
   return ".".join(map(lambda n: str(ip>>n & 0xFF), [24,16,8,0]))
