@@ -1,4 +1,4 @@
-from lab3_skeleton import parse_application_layer_packet, parse_network_layer_packet, parse_raw_ip_addr, IpPacket, TcpPacket
+from lab import parse_application_layer_packet, parse_network_layer_packet, parse_raw_ip_addr, IpPacket, TcpPacket
 import sys
 import binascii
 
