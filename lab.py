@@ -132,12 +132,14 @@ def main():
         # parse network layer packet
         ip_packet = parse_network_layer_packet(raw_data)
         
+        if ip_packet.protocol != 6: continue
+        
         # parse application layer packet
         tcp_packet = parse_application_layer_packet(ip_packet.payload)
     
         try:
-            tcp_packet.payload.decode("utf-8")
-            print(tcp_packet.payload)
+            decoded_payload = tcp_packet.payload.decode("utf-8")
+            print(decoded_payload)
         except:
             continue
 
